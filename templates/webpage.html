@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCG Office 2.21 Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.CSS') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>NCG Office 2.21 Library</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a book..." onkeyup="searchCatalogue()">
+        </div>
+        <table id="catalogueTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Series</th>
+                    <th>Edition</th>
+                    <th>ISBN</th>
+                    <th>Book Website</th>
+                    <th>Owner</th>
+                    <th>Format</th>
+                    <th>Subject</th>
+                    <th>Shelf</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
