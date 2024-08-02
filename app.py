@@ -10,7 +10,7 @@ CORS(app)
 
 @app.route('/catalogue.json', methods=['GET'])
 def get_catalogue_data():
-    df = pd.read_excel(r'C:\Users\Sean\Downloads\SPUR_Catalogue_Manual - Copy (3).xlsx')  
+    df = pd.read_excel('data/SPUR_Catalogue_Manual - Copy (3).xlsx')  
     columns_order = ['Title', 'Author', 'Year', 'Series', 'Edition', 'ISBN', 'Book Website', 'Owner', 'Format', 'Subject Matter', 'Shelf']
     df = df[columns_order]
     data = df.to_dict(orient='records')
