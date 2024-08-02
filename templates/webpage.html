@@ -12,20 +12,33 @@
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search for a book..." onkeyup="searchCatalogue()">
         </div>
+        <div class="filter-bar">
+            <label><input type="checkbox" class="column-checkbox" data-column="Title" checked> Title</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Author" checked> Author</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Year" checked> Year</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Series" checked> Series</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Edition" checked> Edition</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="ISBN" checked> ISBN</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Book Website" checked> Book Website</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Owner" checked> Owner</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Format" checked> Format</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Subject Matter" checked> Subject Matter</label>
+            <label><input type="checkbox" class="column-checkbox" data-column="Shelf" checked> Shelf</label>
+        </div>
         <table id="catalogueTable">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Year</th>
-                    <th>Series</th>
-                    <th>Edition</th>
-                    <th>ISBN</th>
-                    <th>Book Website</th>
-                    <th>Owner</th>
-                    <th>Format</th>
-                    <th>Subject</th>
-                    <th>Shelf</th>
+                    <th data-column="Title">Title</th>
+                    <th data-column="Author">Author</th>
+                    <th data-column="Year">Year</th>
+                    <th data-column="Series">Series</th>
+                    <th data-column="Edition">Edition</th>
+                    <th data-column="ISBN">ISBN</th>
+                    <th data-column="Book Website">Book Website</th>
+                    <th data-column="Owner">Owner</th>
+                    <th data-column="Format">Format</th>
+                    <th data-column="Subject Matter">Subject Matter</th>
+                    <th data-column="Shelf">Shelf</th>
                 </tr>
             </thead>
             <tbody>
