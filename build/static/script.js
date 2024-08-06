@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function fetchCatalogueData() {
     fetch('build/catalogue.json')
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
             console.log('Raw data:', data);
             const sanitizedData = data.replace(/NaN/g, 'null');
