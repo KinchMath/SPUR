@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchCatalogueData() {
-    fetch('build/catalogue.json')
+    fetch('catalogue.json')
         .then(response => response.text())
         .then(data => {
             console.log('Raw data:', data);

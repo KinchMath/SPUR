@@ -10,7 +10,7 @@ CORS(app)
 
 @app.route('/catalogue.json', methods=['GET'])
 def get_catalogue_data():
-    df = pd.read_excel('data/SPUR_Catalogue_Manual - Copy (3).xlsx')  
+    df = pd.read_excel('/workspaces/SPUR/data/SPUR_Catalogue_Manual - Copy (3).xlsx')  
     columns_order = ['Title', 'Author', 'Year', 'Series', 'Edition', 'ISBN', 'Book Website', 'Owner', 'Format', 'Subject Matter', 'Shelf']
     existing_columns = [col for col in columns_order if col in df.columns]
     df = df.reindex(columns=columns_order)
