@@ -25,5 +25,4 @@ def home():
     return render_template('webpage.html')
 
 if __name__ == '__main__':
-    freezer.freeze()
     app.run(debug=True)
