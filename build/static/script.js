@@ -74,6 +74,56 @@ function updateColumnVisibility() {
     });
 }
 
+function applyFiltersAndSort() {
+    const authorFilter = document.getElementById('authorFilter').value.toLowerCase();
+    const yearFilter = document.getElementById('yearFilter').value;
+    const sortOption = document.getElementById('sortOptions').value;
+
+    fetch('catalogue.json')
+        .then(response => response.text())
+        .then(data => {
+            const sanitizedData = data.replace(/NaN/g, 'null');
+            return JSON.parse(sanitizedData);
+        })
+        .then(jsonData => {
+            // Filter data
+            let filteredData = jsonData.filter(item => {
+                let authorMatch = true;
+                let yearMatch = true;
+
+                if (authorFilter) {
+                    authorMatch = item.Author && item.Author.toLowerCase().includes(authorFilter);
+                }
+
+                if (yearFilter) {
+                    yearMatch = item.Year && item.Year.toString() === yearFilter;
+                }
+
+                return authorMatch && yearMatch;
+            });
+
+            // Sort data
+            if (sortOption === 'titleAsc') {
+                filteredData.sort((a, b) => a.Title.localeCompare(b.Title));
+            } else if (sortOption === 'yearAsc') {
+                filteredData.sort((a, b) => a.Year - b.Year);
+            }
+
+            // Display filtered and sorted data
+            displayCatalogueData(filteredData);
+        })
+        .catch(error => {
+            console.error('Error fetching or processing data:', error);
+        });
+}
+
+function clearFilters() {
+    document.getElementById('authorFilter').value = '';
+    document.getElementById('yearFilter').value = '';
+    document.getElementById('sortOptions').value = '';
+    applyFiltersAndSort();
+}
+
 function searchCatalogue() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const rows = document.querySelectorAll('#catalogueTable tbody tr');

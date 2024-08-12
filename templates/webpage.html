@@ -25,6 +25,16 @@
             <label><input type="checkbox" class="column-checkbox" data-column="Subject Matter" > Subject Matter</label>
             <label><input type="checkbox" class="column-checkbox" data-column="Shelf" checked> Shelf</label>
         </div>
+        <div>
+            <input type="text" id="authorFilter" placeholder="Filter by Author">
+            <input type="text" id="yearFilter" placeholder="Filter by Year">
+            <select id="sortOptions">
+                <option value="titleAsc">Sort by Title (A-Z)</option>
+                <option value="yearAsc">Sort by Year (Ascending)</option>
+            </select>
+            <button onclick="applyFiltersAndSort()">Apply</button>
+            <button onclick="clearFilters()">Clear Filters</button>
+        </div>        
         <table id="catalogueTable">
             <thead>
                 <tr>

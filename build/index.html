@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCG Office 2.21 Library</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <div class="container">
@@ -25,6 +25,16 @@
             <label><input type="checkbox" class="column-checkbox" data-column="Subject Matter" > Subject Matter</label>
             <label><input type="checkbox" class="column-checkbox" data-column="Shelf" checked> Shelf</label>
         </div>
+        <div>
+            <input type="text" id="authorFilter" placeholder="Filter by Author">
+            <input type="text" id="yearFilter" placeholder="Filter by Year">
+            <select id="sortOptions">
+                <option value="titleAsc">Sort by Title (A-Z)</option>
+                <option value="yearAsc">Sort by Year (Ascending)</option>
+            </select>
+            <button onclick="applyFiltersAndSort()">Apply</button>
+            <button onclick="clearFilters()">Clear Filters</button>
+        </div>        
         <table id="catalogueTable">
             <thead>
                 <tr>
@@ -46,6 +56,6 @@
             </tbody>
         </table>
     </div>
-    <script src="static/script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
